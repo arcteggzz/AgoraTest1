@@ -1,0 +1,64 @@
+body{
+  background: #00B4DB;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.App{
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App div{
+  margin:20px
+}
+
+.extraMint{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.extraMint button,
+.balance button,
+.login button{
+  background-color: rgb(58, 101, 241);
+  width: 100%;
+  transition: ease 0.3s all;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 20px
+}
+
+.extraMint button:hover{
+  background-color: rgb(0, 54, 232);
+}
+
+
+.balance{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.balance input, 
+.extraMint input{
+  width: 300px;
+  height: 30px;
+}
+
+#loginbtn{
+  background-color: rgb(58, 241, 82);
+}
+
+#logoutbtn{
+  background-color: rgb(225, 44, 44);
+}
