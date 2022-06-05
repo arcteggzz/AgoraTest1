@@ -1,8 +1,12 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Balance from './Balance';
+// import { ethers } from "ethers";
 
 function App() {
+  const [balance, setBalance] = useState("Balance not set")
+  const [receiverAddr, setReceiverAddr] = useState("")
+  const [receiverAmount, setReceiverAmount] = useState("")
 
   return (
     <div className="App">
@@ -11,10 +15,17 @@ function App() {
         <button id='logoutbtn'>Logout</button>
       </div>
       <div className="extraMint">
-        <input type="text" />
+        <input type="text" placeholder='Amount'/>
         <button>ExtraMint</button>
       </div>
-      <Balance />
+      <Balance
+        balance={balance}
+        setBalance={setBalance}
+        receiverAddr ={receiverAddr}
+        setReceiverAddr ={setReceiverAddr}
+        receiverAmount ={receiverAmount}
+        setReceiverAmount ={setReceiverAmount}
+        />
     </div>
   );
 }
