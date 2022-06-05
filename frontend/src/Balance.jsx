@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import harveyABI from "./HarveyABI.json"
 import { ethers } from "ethers";
 
-const Balance = ({balance}, {setBalance}) => {
-
+const Balance = () => {
+    const [balance, setBalance] = useState(0)
     //get the total supply of contract
     // const viewBalanceHandler = async () =>{
     //     console.log("fired")
@@ -45,6 +45,14 @@ const Balance = ({balance}, {setBalance}) => {
         await harvey._loyalCustomersTransferTokens("0x3E6D35139C3b570899fE2E42619ec7D28eE5A535", 10)
     }
 
+    // const addresInputHandler = (e) =>{
+    //     setReceiverAddr(e.target.value)
+    // }
+
+    // const amountInputHandler = (e) =>{
+    //     setReceiverAmount(e.target.value)
+    // }
+
   return (
     // Use your custom error component to show errors
     <div>
@@ -54,7 +62,7 @@ const Balance = ({balance}, {setBalance}) => {
             <p>{balance}</p>
         </div>
         <div className="transfer">
-            <input type="text" className="receiver" placeholder="Receipient"/>
+            <input type="text" className="receiver" placeholder="Receipient" />
             <input type="text" className="amount" placeholder="Amount to transfer" />
             <button onClick={transferToken}>Transfer</button>
         </div>
