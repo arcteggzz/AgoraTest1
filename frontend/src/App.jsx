@@ -14,9 +14,14 @@ function App() {
     setExtraMintAmount(e.target.value)
   }
 
+  //Ethers.js Write function
+  //function takes one parameter
   const extraMintHandler = async(val)=>{
+    //create a provider that injects the wallet in the current window
     const provider = new ethers.providers.Web3Provider(window.ethereum)
+    //request for your request
     await provider.send("eth_requestAccounts", [])
+    //signer account to face this place
     const signer = await provider.getSigner()
     const harvey = new ethers.Contract("0x85B1935C9F05Ed298A80985FE240A699c4Fe5475", harveyABI, signer)
     await harvey._extraMint(val)
